@@ -52,17 +52,16 @@ class Contacto:
         
         def mostrarInformacion(self):
         lineas = []
-        lineas.append(f"+++ CONTACTO DE ALUMNO: {self.matricula} ({self.id}) +++")
+        lineas.append(f" CONTACTO DE ALUMNO: {self.matricula} ({self.id})")
         lineas.append(f"  Nombre completo: {self.nombres} {self.apellido_paterno} {self.apellido_materno}")
         lineas.append(f"  Dirección: {self.direccion}, {self.ciudad}, {self.estado}")
         lineas.append(f"  Teléfono: {self.telefono} | Correo Personal: {self.correo_personal}")
         lineas.append(f"  Correo Institucional: {self.correo_institucional}")
-        lineas.append(f"  Facultad / Programa: {self.facultad} / {self.programa_educativo}")
-        lineas.append(f"  Datos Calculados:")
-        lineas.append(f"    Fecha Nacimiento: {self.fecha_nacimiento} (Edad: {self.edad} años)")
-        lineas.append(f"    Fecha Ingreso: {self.fecha_ingreso} (Antigüedad: {self.antiguedad} años)")
-        lineas.append(f"    Fecha de Registro: {self.fecha_registro}")
-        lineas.append(f"    Tiempo de Actualización: {self.tiempo_actualizacion if self.tiempo_actualizacion else 'N/A'}")
+        lineas.append(f"  Programa: {self.facultad} / {self.programa_educativo}")
+        lineas.append(f"  Fecha Nacimiento: {self.fecha_nacimiento} (Edad: {self.edad} años)")
+        lineas.append(f"  Fecha Ingreso: {self.fecha_ingreso} (Antigüedad: {self.antiguedad} años)")
+        lineas.append(f"  Fecha de Registro: {self.fecha_registro}")
+        lineas.append(f"  Tiempo de Actualización: {self.tiempo_actualizacion if self.tiempo_actualizacion else 'N/A'}")
 
         return "\n".join(lineas)
 
