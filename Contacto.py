@@ -1,3 +1,32 @@
+
+from datetime import datetime, date
+
+def calcularEdad(fecha_nacimiento_str):
+    try:
+        dia, mes, anio = map(int, fecha_nacimiento_str.split('/'))
+        fecha_nac = date(anio, mes, dia)
+        hoy = date.today()
+        edad_calculada = hoy.year - fecha_nac.year - ((hoy.month, hoy.day) < (fecha_nac.month, fecha_nac.day))
+        return edad_calculada
+    except:
+        return 0 
+
+def generarId(matricula_str):
+    return abs(hash(matricula_str)) % 1000000
+
+def obtenerFechaHoraActual(formato):
+    return datetime.now().strftime(formato)
+
+def calcularAntiguedad(fecha_ingreso_str):
+    try:
+        dia, mes, anio = map(int, fecha_ingreso_str.split('/'))
+        fecha_ingreso = date(anio, mes, dia)
+        hoy = date.today()
+        antiguedad_calculada = hoy.year - fecha_ingreso.year - ((hoy.month, hoy.day) < (fecha_ingreso.month, fecha_ingreso.day))
+        return antiguedad_calculada
+    except:
+        return 0
+
 class Contacto:
     def __init__(self, nombres, apellido_paterno, apellido_materno, direccion, estado, ciudad, fecha_nacimiento, telefono, correo_personal, matricula, correo_institucional, facultad, programa_educativo, fecha_ingreso):
         self.nombres = nombres
