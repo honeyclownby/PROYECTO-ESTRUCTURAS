@@ -22,19 +22,19 @@ class Contacto:
         self.tiempoActualizacion = "" 
         
         def mostrarInformacion(self):
-            info = f"ID: {self.id}\n"
-            info += f"Nombres: {self.nombres} {self.apellido_paterno} {self.apellido_materno}\n"
-            info += f"Dirección: {self.direccion}, {self.ciudad}, {self.estado}\n"
-            info += f"Fecha de Nacimiento: {self.fecha_nacimiento} (Edad: {self.edad})\n"
-            info += f"Teléfono: {self.telefono}\n"
-            info += f"Correo Personal: {self.correo_personal}\n"
-            info += f"Matrícula: {self.matricula}\n"
-            info += f"Correo Institucional: {self.correo_institucional}\n"
-            info += f"Facultad: {self.facultad}\n"
-            info += f"Programa Educativo: {self.programa_educativo}\n"
-            info += f"Fecha de Ingreso: {self.fecha_ingreso} (Antigüedad: {self.antiguedad})\n"
-            info += f"Fecha de Registro: {self.fechaRegistro}\n"
-            info += f"Tiempo desde la última actualización: {self.tiempoActualizacion}\n"
-            return info
+        lineas = []
+        lineas.append(f"+++ CONTACTO DE ALUMNO: {self.matricula} ({self.id}) +++")
+        lineas.append(f"  Nombre completo: {self.nombres} {self.apellido_paterno} {self.apellido_materno}")
+        lineas.append(f"  Dirección: {self.direccion}, {self.ciudad}, {self.estado}")
+        lineas.append(f"  Teléfono: {self.telefono} | Correo Personal: {self.correo_personal}")
+        lineas.append(f"  Correo Institucional: {self.correo_institucional}")
+        lineas.append(f"  Facultad / Programa: {self.facultad} / {self.programa_educativo}")
+        lineas.append(f"  Datos Calculados:")
+        lineas.append(f"    Fecha Nacimiento: {self.fecha_nacimiento} (Edad: {self.edad} años)")
+        lineas.append(f"    Fecha Ingreso: {self.fecha_ingreso} (Antigüedad: {self.antiguedad} años)")
+        lineas.append(f"    Fecha de Registro: {self.fecha_registro}")
+        lineas.append(f"    Tiempo de Actualización: {self.tiempo_actualizacion if self.tiempo_actualizacion else 'N/A'}")
+
+        return "\n".join(lineas)
 
         
